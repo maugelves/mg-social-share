@@ -263,7 +263,7 @@ class MG_Social_Share {
 
         $is_rrss_active = get_option('mgss_email');
         if( !empty( $is_rrss_active ) ):
-            $html.='<li><a class="email" href="mailto:?Subject='.__('Quiero compartir este enlace contigo','mgss').'&Body='.__('Hola, quiero compartir contigo este enlace, espero te sea de utilidad:','mgss').' '.get_the_title().' '.get_permalink().'" target="_blank"><i class="fa fa-envelope-o"></i></a></li>';
+            $html.='<li><a class="mgss__item mgss__item--email" href="mailto:?Subject='.__('Quiero compartir este enlace contigo','mgss').'&Body='.__('Hola, quiero compartir contigo este enlace, espero te sea de utilidad:','mgss').' '.get_the_title().' '.get_permalink().'" target="_blank"><i class="fa fa-envelope-o"></i></a></li>';
         endif;
 
         echo $html;
