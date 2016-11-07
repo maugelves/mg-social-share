@@ -19,7 +19,7 @@ class MG_Social_Share {
      * @var Singleton The reference to *Singleton* instance of this class
      */
     private static $instance;
-    private $plugin_url = plugin_url() . "/mg-social-share";
+    private $plugin_url;
 
     /**
      * Returns the *Singleton* instance of this class.
@@ -42,6 +42,8 @@ class MG_Social_Share {
     protected function __construct(){}
 
     function init(){
+
+        $this->plugin_url = plugins_url() . "/mg-social-share";
 
         add_action( 'init', array($this, 'enqueue_style' ) );
         add_action( 'admin_menu', array( $this, 'create_options_menu' ) );
@@ -246,20 +248,7 @@ class MG_Social_Share {
      */
     function enqueue_style()
     {
-
-        $custom_style = "@font-face {
-                        font-family: 'icomoon';
-                        src:  url('" . $plugin_url . "/fonts/icomoon.eot');
-                        src:  url('" . $plugin_url . "/fonts/icomoon.eot#iefix') format('embedded-opentype'),
-                        url('" . $plugin_url . "/fonts/icomoon.ttf') format('truetype'),
-                        url('" . $plugin_url . "/fonts/icomoon.woff') format('woff'),
-                        url('" . $plugin_url . "/fonts/icomoon.svg#icomoon') format('svg');
-                        font-weight: normal;
-                        font-style: normal;
-                    }";
-
-        wp_add_inline_style( 'custom-style', $custom_style );
-        wp_enqueue_style( 'fass-style', $plugin_url . 'style.min.css' , array(), false );
+        wp_enqueue_style( 'fass-style', $this->plugin_url . '/mgstyle.css' , array(), false );
     }
 
 
