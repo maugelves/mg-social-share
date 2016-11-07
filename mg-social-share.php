@@ -266,15 +266,6 @@ class MG_Social_Share {
         $title=urlencode(get_the_title());
         $summary=urlencode(get_the_excerpt());
 
-        $is_rrss_active = get_option('fass_googleplus');
-        if( !empty( $is_rrss_active ) ):
-            $html.='<li><a class="fass__item fass__item--gp" href="#" onclick="window.open(\'https://plus.google.com/share?url='.$permalink.'\',\'MsgWindow\',\'width=640,height=400\');return false;" target="_blank"><i class="icon-google-plus"></i></a></li>';
-        endif;
-
-        $is_rrss_active = get_option('fass_linkedin');
-        if( !empty( $is_rrss_active ) ):
-            $html.='<li><a class="fass__item fass__item--in" href="#" onclick="window.open(\'https://www.linkedin.com/shareArticle?mini=true&url='.$permalink.'&title='.$title.'&summary='.$summary.'\',\'MsgWindow\',\'width=640,height=400\');return false;" target="_blank"><i class="icon-linkedin"></i></a></li>';
-        endif;
 
         $is_rrss_active = get_option('fass_facebook');
         if( !empty( $is_rrss_active ) ):
@@ -284,6 +275,16 @@ class MG_Social_Share {
         $is_rrss_active = get_option('fass_twitter');
         if( !empty( $is_rrss_active ) ):
             $html.='<li><a class="fass__item fass__item--tw" href="#" onclick="window.open(\'https://twitter.com/share?url='.$permalink.'&amp;text='.$title.'\',\'MsgWindow\',\'width=640,height=400\');return false;" target="_blank"><i class="icon-twitter"></i></a></li>';
+        endif;
+
+        $is_rrss_active = get_option('fass_googleplus');
+        if( !empty( $is_rrss_active ) ):
+            $html.='<li><a class="fass__item fass__item--gp" href="#" onclick="window.open(\'https://plus.google.com/share?url='.$permalink.'\',\'MsgWindow\',\'width=640,height=400\');return false;" target="_blank"><i class="icon-google-plus"></i></a></li>';
+        endif;
+
+        $is_rrss_active = get_option('fass_linkedin');
+        if( !empty( $is_rrss_active ) ):
+            $html.='<li><a class="fass__item fass__item--in" href="#" onclick="window.open(\'https://www.linkedin.com/shareArticle?mini=true&url='.$permalink.'&title='.$title.'&summary='.$summary.'\',\'MsgWindow\',\'width=640,height=400\');return false;" target="_blank"><i class="icon-linkedin"></i></a></li>';
         endif;
 
         $is_rrss_active = get_option('fass_email');
