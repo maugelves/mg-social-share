@@ -59,65 +59,65 @@ class MG_Social_Share {
 
         // SOCIAL NETWORK PICKER
         add_settings_section(
-            'fass_sn_picker',
-            __( 'Please choose the Social Networks to share your content.', 'fass' ),
-            array($this, 'fass_settings_sn_cb'),
-            'fass_settings'
+            'mgss_sn_picker',
+            __( 'Please choose the Social Networks to share your content.', 'mgss' ),
+            array($this, 'mgss_settings_sn_cb'),
+            'mgss_settings'
         );
 
         add_settings_field(
-            'fass_facebook_field',
-            __( 'Use Facebook?', 'fass' ),
-            array($this, 'fass_facebook_field_render' ),
-            'fass_settings',
-            'fass_sn_picker'
+            'mgss_facebook_field',
+            __( 'Use Facebook?', 'mgss' ),
+            array($this, 'mgss_facebook_field_render' ),
+            'mgss_settings',
+            'mgss_sn_picker'
         );
-        register_setting( 'fass_settings', 'fass_facebook' );
+        register_setting( 'mgss_settings', 'mgss_facebook' );
 
         add_settings_field(
-            'fass_twitter_field',
-            __( 'Use Twitter?', 'fass' ),
-            array($this, 'fass_twitter_field_render' ),
-            'fass_settings',
-            'fass_sn_picker'
+            'mgss_twitter_field',
+            __( 'Use Twitter?', 'mgss' ),
+            array($this, 'mgss_twitter_field_render' ),
+            'mgss_settings',
+            'mgss_sn_picker'
         );
-        register_setting( 'fass_settings', 'fass_twitter' );
+        register_setting( 'mgss_settings', 'mgss_twitter' );
 
         add_settings_field(
-            'fass_whatsapp_field',
-            __( 'Use WhatsApp?', 'fass' ),
-            array($this, 'fass_whatsapp_field_render' ),
-            'fass_settings',
-            'fass_sn_picker'
+            'mgss_whatsapp_field',
+            __( 'Use WhatsApp?', 'mgss' ),
+            array($this, 'mgss_whatsapp_field_render' ),
+            'mgss_settings',
+            'mgss_sn_picker'
         );
-        register_setting( 'fass_settings', 'fass_whatsapp' );
+        register_setting( 'mgss_settings', 'mgss_whatsapp' );
 
         add_settings_field(
-            'fass_linkedin_field',
-            __( 'Use LinkedIn?', 'fass' ),
-            array($this, 'fass_linkedin_field_render' ),
-            'fass_settings',
-            'fass_sn_picker'
+            'mgss_linkedin_field',
+            __( 'Use LinkedIn?', 'mgss' ),
+            array($this, 'mgss_linkedin_field_render' ),
+            'mgss_settings',
+            'mgss_sn_picker'
         );
-        register_setting( 'fass_settings', 'fass_linkedin' );
+        register_setting( 'mgss_settings', 'mgss_linkedin' );
 
         add_settings_field(
-            'fass_googleplus_field',
-            __( 'Use Google Plus?', 'fass' ),
-            array($this, 'fass_googleplus_field_render' ),
-            'fass_settings',
-            'fass_sn_picker'
+            'mgss_googleplus_field',
+            __( 'Use Google Plus?', 'mgss' ),
+            array($this, 'mgss_googleplus_field_render' ),
+            'mgss_settings',
+            'mgss_sn_picker'
         );
-        register_setting( 'fass_settings', 'fass_googleplus' );
+        register_setting( 'mgss_settings', 'mgss_googleplus' );
 
         add_settings_field(
-            'fass_email_field',
-            __( 'Use Email?', 'fass' ),
-            array($this, 'fass_email_field_render' ),
-            'fass_settings',
-            'fass_sn_picker'
+            'mgss_email_field',
+            __( 'Use Email?', 'mgss' ),
+            array($this, 'mgss_email_field_render' ),
+            'mgss_settings',
+            'mgss_sn_picker'
         );
-        register_setting( 'fass_settings', 'fass_email' );
+        register_setting( 'mgss_settings', 'mgss_email' );
 
 
 
@@ -127,11 +127,11 @@ class MG_Social_Share {
     /**
      * Render Facebook Field
      */
-    function fass_facebook_field_render(  ) {
+    function mgss_facebook_field_render(  ) {
 
-        $fass_item = get_option( 'fass_facebook' );
+        $mgss_item = get_option( 'mgss_facebook' );
         ?>
-        <input type='checkbox' name='fass_facebook' <?php checked( $fass_item, 1 ); ?> value='1'>
+        <input type='checkbox' name='mgss_facebook' <?php checked( $mgss_item, 1 ); ?> value='1'>
         <?php
 
     }
@@ -140,11 +140,11 @@ class MG_Social_Share {
     /**
      * Render Twitter Field
      */
-    function fass_twitter_field_render(  ) {
+    function mgss_twitter_field_render(  ) {
 
-        $fass_item = get_option( 'fass_twitter' );
+        $mgss_item = get_option( 'mgss_twitter' );
         ?>
-        <input type='checkbox' name='fass_twitter' <?php checked( $fass_item, 1 ); ?> value='1'>
+        <input type='checkbox' name='mgss_twitter' <?php checked( $mgss_item, 1 ); ?> value='1'>
         <?php
 
     }
@@ -153,11 +153,11 @@ class MG_Social_Share {
     /**
      * Render Linkedin Field
      */
-    function fass_linkedin_field_render(  ) {
+    function mgss_linkedin_field_render(  ) {
 
-        $fass_item = get_option( 'fass_linkedin' );
+        $mgss_item = get_option( 'mgss_linkedin' );
         ?>
-        <input type='checkbox' name='fass_linkedin' <?php checked( $fass_item, 1 ); ?> value='1'>
+        <input type='checkbox' name='mgss_linkedin' <?php checked( $mgss_item, 1 ); ?> value='1'>
         <?php
 
     }
@@ -166,11 +166,11 @@ class MG_Social_Share {
     /**
      * Render Google Plus Field
      */
-    function fass_googleplus_field_render(  ) {
+    function mgss_googleplus_field_render(  ) {
 
-        $fass_item = get_option( 'fass_googleplus' );
+        $mgss_item = get_option( 'mgss_googleplus' );
         ?>
-        <input type='checkbox' name='fass_googleplus' <?php checked( $fass_item, 1 ); ?> value='1'>
+        <input type='checkbox' name='mgss_googleplus' <?php checked( $mgss_item, 1 ); ?> value='1'>
         <?php
 
     }
@@ -179,11 +179,11 @@ class MG_Social_Share {
     /**
      * Render Email Field
      */
-    function fass_email_field_render(  ) {
+    function mgss_email_field_render(  ) {
 
-        $fass_item = get_option( 'fass_email' );
+        $mgss_item = get_option( 'mgss_email' );
         ?>
-        <input type='checkbox' name='fass_email' <?php checked( $fass_item, 1 ); ?> value='1'>
+        <input type='checkbox' name='mgss_email' <?php checked( $mgss_item, 1 ); ?> value='1'>
         <?php
 
     }
@@ -192,17 +192,17 @@ class MG_Social_Share {
     /**
      * Render WhatsApp Field
      */
-    function fass_whatsapp_field_render(  ) {
+    function mgss_whatsapp_field_render(  ) {
 
-        $fass_item = get_option( 'fass_whatsapp' );
+        $mgss_item = get_option( 'mgss_whatsapp' );
         ?>
-        <input type='checkbox' name='fass_whatsapp' <?php checked( $fass_item, 1 ); ?> value='1'>
+        <input type='checkbox' name='mgss_whatsapp' <?php checked( $mgss_item, 1 ); ?> value='1'>
         <?php
 
     }
 
 
-    function fass_settings_sn_cb() {}
+    function mgss_settings_sn_cb() {}
 
 
     /**
@@ -212,8 +212,8 @@ class MG_Social_Share {
     {
         add_submenu_page(
             'options-general.php',
-            __('MG Social Share', 'fass'),
-            __('MG Social Share', 'fass'),
+            __('MG Social Share', 'mgss'),
+            __('MG Social Share', 'mgss'),
             'manage_options',
             'mg-social-share',
             array($this, 'create_options_page_cb')
@@ -231,8 +231,8 @@ class MG_Social_Share {
             <h2>MG Social Share</h2>
 
             <?php
-            settings_fields( 'fass_settings' );
-            do_settings_sections( 'fass_settings' );
+            settings_fields( 'mgss_settings' );
+            do_settings_sections( 'mgss_settings' );
             submit_button();
             ?>
 
@@ -248,7 +248,7 @@ class MG_Social_Share {
      */
     function enqueue_style()
     {
-        wp_enqueue_style( 'fass-style', $this->plugin_url . '/mgstyle.css' , array(), false );
+        wp_enqueue_style( 'mgss-style', $this->plugin_url . '/mgstyle.css' , array(), false );
     }
 
 
@@ -257,47 +257,61 @@ class MG_Social_Share {
      * Use this function inside the loop (https://codex.wordpress.org/The_Loop).
      *
      * @author  Mauricio Gelves <yo@maugelves.com>
+     * @param   $output_later   bool    if true return the HTML as string.
+     * @return  void|string
      * @version 1.0
      */
-    function render()
+    function render( $output_later = false )
     {
 
-        echo '<ul class="mg-social-share">';
-
+        // Variable
         $html="";
+
+        $html .= '<ul class="mg-social-share">';
+
         $permalink=urlencode(get_permalink());
         $title=urlencode(get_the_title());
         $summary=urlencode(get_the_excerpt());
 
 
-        $is_rrss_active = get_option('fass_facebook');
+        $is_rrss_active = get_option('mgss_whatsapp');
+        if( !empty( $is_rrss_active ) && wp_is_mobile() ):
+        $html.='<li><a href="whatsapp://send" data-text="Take a look at this awesome website:" data-href="" class="wa_btn wa_btn_l" style="display:none"><i class="mg-icon-whatsapp"></i></a></li>';
+        endif;
+
+        $is_rrss_active = get_option('mgss_facebook');
         if( !empty( $is_rrss_active ) ):
             $html.='<li><a class="mgss__item mgss__item--fb" href="#" onclick="window.open(\'https://www.facebook.com/sharer/sharer.php?u='.$permalink.'\',\'MsgWindow\',\'width=640,height=400\');return false;" target="_blank"><i class="mg-icon-facebook"></i></a></li>';
         endif;
 
-        $is_rrss_active = get_option('fass_twitter');
+        $is_rrss_active = get_option('mgss_twitter');
         if( !empty( $is_rrss_active ) ):
             $html.='<li><a class="mgss__item mgss__item--tw" href="#" onclick="window.open(\'https://twitter.com/share?url='.$permalink.'&amp;text='.$title.'\',\'MsgWindow\',\'width=640,height=400\');return false;" target="_blank"><i class="mg-icon-twitter"></i></a></li>';
         endif;
 
-        $is_rrss_active = get_option('fass_googleplus');
+        $is_rrss_active = get_option('mgss_googleplus');
         if( !empty( $is_rrss_active ) ):
             $html.='<li><a class="mgss__item mgss__item--gp" href="#" onclick="window.open(\'https://plus.google.com/share?url='.$permalink.'\',\'MsgWindow\',\'width=640,height=400\');return false;" target="_blank"><i class="mg-icon-google-plus"></i></a></li>';
         endif;
 
-        $is_rrss_active = get_option('fass_linkedin');
+        $is_rrss_active = get_option('mgss_linkedin');
         if( !empty( $is_rrss_active ) ):
             $html.='<li><a class="mgss__item mgss__item--in" href="#" onclick="window.open(\'https://www.linkedin.com/shareArticle?mini=true&url='.$permalink.'&title='.$title.'&summary='.$summary.'\',\'MsgWindow\',\'width=640,height=400\');return false;" target="_blank"><i class="mg-icon-linkedin"></i></a></li>';
         endif;
 
-        $is_rrss_active = get_option('fass_email');
+        $is_rrss_active = get_option('mgss_email');
         if( !empty( $is_rrss_active ) ):
             $html.='<li><a class="mgss__item mgss__item--email" href="mailto:?Subject='.__('Quiero compartir este enlace contigo','mgss').'&Body='.__('Hola, quiero compartir contigo este enlace, espero te sea de utilidad:','mgss').' '.get_the_title().' '.get_permalink().'" target="_blank"><i class="mg-icon-envelope"></i></a></li>';
         endif;
 
-        echo $html;
+        $html .= '</ul>';
 
-        echo '</ul>';
+        if( $output_later ) {
+            return $html;
+        }
+        else{
+            echo $html;
+        }
 
     }
 
