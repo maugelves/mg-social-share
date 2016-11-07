@@ -19,6 +19,7 @@ class MG_Social_Share {
      * @var Singleton The reference to *Singleton* instance of this class
      */
     private static $instance;
+    private $plugin_url = plugin_url() . "/mg-social-share";
 
     /**
      * Returns the *Singleton* instance of this class.
@@ -245,7 +246,20 @@ class MG_Social_Share {
      */
     function enqueue_style()
     {
-        wp_enqueue_style( 'fass-style', plugins_url('style.min.css', __FILE__) , array(), false );
+
+        $custom_style = "@font-face {
+                        font-family: 'icomoon';
+                        src:  url('" . $plugin_url . "/fonts/icomoon.eot');
+                        src:  url('" . $plugin_url . "/fonts/icomoon.eot#iefix') format('embedded-opentype'),
+                        url('" . $plugin_url . "/fonts/icomoon.ttf') format('truetype'),
+                        url('" . $plugin_url . "/fonts/icomoon.woff') format('woff'),
+                        url('" . $plugin_url . "/fonts/icomoon.svg#icomoon') format('svg');
+                        font-weight: normal;
+                        font-style: normal;
+                    }";
+
+        wp_add_inline_style( 'custom-style', $custom_style );
+        wp_enqueue_style( 'fass-style', $plugin_url . 'style.min.css' , array(), false );
     }
 
 
@@ -304,7 +318,7 @@ class MG_Social_Share {
      * Config [mgss-render] shortcode
      *
      *  @author     Mauricio Gelves <yo@maugelves.com>
-     *  @version    1.0 
+     *  @version    1.0
      */
     function render_shortcode( $atts ){
         $this->render();
