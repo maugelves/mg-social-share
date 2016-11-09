@@ -276,7 +276,7 @@ class MG_Social_Share {
 
         $is_rrss_active = get_option('mgss_whatsapp');
         if( !empty( $is_rrss_active ) ):
-        $html.='<li><a href="whatsapp://send" data-text="Take a look at this awesome website:" data-href="" class="wa_btn wa_btn_l" style="display:none"><i class="mg-icon-whatsapp"></i></a></li>';
+        $html.='<li class="mgss__item"><a class="mgss__link mgss__link--whatsapp" href="whatsapp://send" data-text="Take a look at this awesome website:"><i class="mg-icon-whatsapp"></i></a></li>';
         endif;
 
         $is_rrss_active = get_option('mgss_facebook');
