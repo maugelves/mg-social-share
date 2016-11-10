@@ -248,7 +248,7 @@ class MG_Social_Share {
      */
     function enqueue_style()
     {
-        wp_enqueue_style( 'mgss-style', $this->plugin_url . '/mgstyle.css' , array(), false );
+        wp_enqueue_style( 'mg-social-fonts', $this->plugin_url . '/mgstyle.css' , array(), false );
     }
 
 
@@ -276,32 +276,32 @@ class MG_Social_Share {
 
         $is_rrss_active = get_option('mgss_whatsapp');
         if( !empty( $is_rrss_active ) ):
-        $html.='<li class="mgss__item"><a class="mgss__link mgss__link--whatsapp" href="whatsapp://send" data-text="Take a look at this awesome website:"><i class="mg-icon-whatsapp"></i></a></li>';
+        $html.='<li class="mgss__item"><a class="mgss__link mgss__link--whatsapp" href="whatsapp://send" data-text="Take a look at this awesome website:"><i class="icon-whatsapp"></i></a></li>';
         endif;
 
         $is_rrss_active = get_option('mgss_facebook');
         if( !empty( $is_rrss_active ) ):
-            $html.='<li class="mgss__item"><a class="mgss__link mgss__link--fb" href="#" onclick="window.open(\'https://www.facebook.com/sharer/sharer.php?u='.$permalink.'\',\'MsgWindow\',\'width=640,height=400\');return false;" target="_blank"><i class="mg-icon-facebook"></i></a></li>';
+            $html.='<li class="mgss__item"><a class="mgss__link mgss__link--fb" href="#" onclick="window.open(\'https://www.facebook.com/sharer/sharer.php?u='.$permalink.'\',\'MsgWindow\',\'width=640,height=400\');return false;" target="_blank"><i class="icon-facebook"></i></a></li>';
         endif;
 
         $is_rrss_active = get_option('mgss_twitter');
         if( !empty( $is_rrss_active ) ):
-            $html.='<li class="mgss__item"><a class="mgss__link mgss__link--tw" href="#" onclick="window.open(\'https://twitter.com/share?url='.$permalink.'&amp;text='.$title.'\',\'MsgWindow\',\'width=640,height=400\');return false;" target="_blank"><i class="mg-icon-twitter"></i></a></li>';
+            $html.='<li class="mgss__item"><a class="mgss__link mgss__link--tw" href="#" onclick="window.open(\'https://twitter.com/share?url='.$permalink.'&amp;text='.$title.'\',\'MsgWindow\',\'width=640,height=400\');return false;" target="_blank"><i class="icon-twitter"></i></a></li>';
         endif;
 
         $is_rrss_active = get_option('mgss_googleplus');
         if( !empty( $is_rrss_active ) ):
-            $html.='<li class="mgss__item"<a class="mgss__link mgss__link--gp" href="#" onclick="window.open(\'https://plus.google.com/share?url='.$permalink.'\',\'MsgWindow\',\'width=640,height=400\');return false;" target="_blank"><i class="mg-icon-google-plus"></i></a></li>';
+            $html.='<li class="mgss__item"<a class="mgss__link mgss__link--gp" href="#" onclick="window.open(\'https://plus.google.com/share?url='.$permalink.'\',\'MsgWindow\',\'width=640,height=400\');return false;" target="_blank"><i class="icon-google"></i></a></li>';
         endif;
 
         $is_rrss_active = get_option('mgss_linkedin');
         if( !empty( $is_rrss_active ) ):
-            $html.='<li class="mgss__item"><a class="mgss__link mgss__link--in" href="#" onclick="window.open(\'https://www.linkedin.com/shareArticle?mini=true&url='.$permalink.'&title='.$title.'&summary='.$summary.'\',\'MsgWindow\',\'width=640,height=400\');return false;" target="_blank"><i class="mg-icon-linkedin"></i></a></li>';
+            $html.='<li class="mgss__item"><a class="mgss__link mgss__link--in" href="#" onclick="window.open(\'https://www.linkedin.com/shareArticle?mini=true&url='.$permalink.'&title='.$title.'&summary='.$summary.'\',\'MsgWindow\',\'width=640,height=400\');return false;" target="_blank"><i class="icon-linkedin"></i></a></li>';
         endif;
 
         $is_rrss_active = get_option('mgss_email');
         if( !empty( $is_rrss_active ) ):
-            $html.='<li class="mgss__item"><a class="mgss__link mgss__item--email" href="mailto:?Subject='.__('Quiero compartir este enlace contigo','mgss').'&Body='.__('Hola, quiero compartir contigo este enlace, espero te sea de utilidad:','mgss').' '.get_the_title().' '.get_permalink().'" target="_blank"><i class="mg-icon-envelope"></i></a></li>';
+            $html.='<li class="mgss__item"><a class="mgss__link mgss__item--email" href="mailto:?Subject='.__('Quiero compartir este enlace contigo','mgss').'&Body='.__('Hola, quiero compartir contigo este enlace, espero te sea de utilidad:','mgss').' '.get_the_title().' '.get_permalink().'" target="_blank"><i class="icon-mail"></i></a></li>';
         endif;
 
         $html .= '</ul>';
