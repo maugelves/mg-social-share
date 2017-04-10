@@ -276,7 +276,7 @@ class MG_Social_Share {
 
         $is_rrss_active = get_option('mgss_whatsapp');
         if( !empty( $is_rrss_active ) && wp_is_mobile() ):
-        $html.='<li class="mgss__item"><a class="mgss__link mgss__link--whatsapp" href="whatsapp://send" data-text="Take a look at this awesome website:"><i class="mg-icon-whatsapp"></i></a></li>';
+        $html.='<li class="mgss__item"><a class="mgss__link mgss__link--whatsapp" href="whatsapp://send?text=' . $title . ' - ' . $permalink . '" data-text="Take a look at this awesome website:"><i class="mg-icon-whatsapp"></i></a></li>';
         endif;
 
         $is_rrss_active = get_option('mgss_facebook');
